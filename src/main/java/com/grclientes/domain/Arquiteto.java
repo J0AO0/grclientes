@@ -1,6 +1,8 @@
 package com.grclientes.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.grclientes.domain.dto.ArquitetoDTO;
+import com.grclientes.domain.dto.ArquitetoNewDTO;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -50,6 +52,16 @@ public class Arquiteto implements Serializable {
     }
 
     public Arquiteto() {
+    }
+
+    public Arquiteto(ArquitetoDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+    }
+
+    public Arquiteto(ArquitetoNewDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
     }
 
     @JsonIgnore

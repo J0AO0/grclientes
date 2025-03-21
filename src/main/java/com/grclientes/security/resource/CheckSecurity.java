@@ -126,110 +126,56 @@ public @interface CheckSecurity {
 
     }
 
-    public @interface Categoria {
+    public @interface Arquiteto {
 
-        @PreAuthorize("hasAuthority('C_CAT')")
+        @PreAuthorize("hasAuthority('C_ARQ')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeCadastrar {}
 
-        @PreAuthorize("hasAuthority('D_CAT')")
+        @PreAuthorize("hasAuthority('D_ARQ')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeExcluir {}
 
-        @PreAuthorize("hasAuthority('U_CAT')")
+        @PreAuthorize("hasAuthority('U_ARQ')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeAtualizar {}
 
-        @PreAuthorize("hasAuthority('R_CAT')")
+        @PreAuthorize("hasAuthority('R_ARQ')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeConsultar {}
 
-        @PreAuthorize("hasAuthority('S_CAT')")
+        @PreAuthorize("hasAuthority('S_ARQ')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeAlterarStatus {}
 
-    }    public @interface CondPagamento {
+    }    public @interface Vendedor {
 
-        @PreAuthorize("hasAuthority('C_COND')")
+        @PreAuthorize("hasAuthority('C_VEND')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeCadastrar {}
 
-        @PreAuthorize("hasAuthority('D_COND')")
+        @PreAuthorize("hasAuthority('D_VEND')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeExcluir {}
 
-        @PreAuthorize("hasAuthority('U_COND')")
+        @PreAuthorize("hasAuthority('U_VEND')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeAtualizar {}
 
-        @PreAuthorize("hasAuthority('R_COND')")
+        @PreAuthorize("hasAuthority('R_VEND')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeConsultar {}
 
-        @PreAuthorize("hasAuthority('S_COND')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeAlterarStatus {}
-
-    }    public @interface TipoFrete {
-
-        @PreAuthorize("hasAuthority('C_TIPF')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeCadastrar {}
-
-        @PreAuthorize("hasAuthority('D_TIPF')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeExcluir {}
-
-        @PreAuthorize("hasAuthority('U_TIPF')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeAtualizar {}
-
-        @PreAuthorize("hasAuthority('R_TIPF')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeConsultar {}
-
-        @PreAuthorize("hasAuthority('S_TIPF')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeAlterarStatus {}
-
-    }    public @interface FormaPagamento {
-
-        @PreAuthorize("hasAuthority('C_FORMP')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeCadastrar {}
-
-        @PreAuthorize("hasAuthority('D_FORMP')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeExcluir {}
-
-        @PreAuthorize("hasAuthority('U_FORMP')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeAtualizar {}
-
-        @PreAuthorize("hasAuthority('R_FORMP')")
-        @Retention(RUNTIME)
-        @Target(METHOD)
-        public @interface PodeConsultar {}
-
-        @PreAuthorize("hasAuthority('S_FORMP')")
+        @PreAuthorize("hasAuthority('S_VEND')")
         @Retention(RUNTIME)
         @Target(METHOD)
         public @interface PodeAlterarStatus {}

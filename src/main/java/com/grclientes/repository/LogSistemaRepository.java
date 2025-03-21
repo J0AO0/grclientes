@@ -1,7 +1,7 @@
 package com.grclientes.repository;
 
 
-import com.mei.vendasapi.domain.LogSistema;
+import com.grclientes.domain.LogSistema;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

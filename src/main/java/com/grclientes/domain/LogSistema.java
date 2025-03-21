@@ -116,6 +116,11 @@ public class LogSistema implements Serializable {
     @JoinColumn(name = "arquiteto_id", nullable = false)
     private Arquiteto arquiteto;
 
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "vendedor_id", nullable = false)
+    private Vendedor vendedor;
+
     public LogSistema() {
 
     }
@@ -176,6 +181,13 @@ public class LogSistema implements Serializable {
         this.arquiteto = arquiteto;
     }
 
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
 
     public LogSistema(Integer id, String usuarioLogado, String comando, OffsetDateTime datagravacao, Empresa empresa) {
         this.id = id;
@@ -223,12 +235,24 @@ public class LogSistema implements Serializable {
     }
 
     public LogSistema(Integer id, String usuarioLogado, String comando, OffsetDateTime datagravacao,
-                      Arquiteto arquiteto) {
+                      Arquiteto arquiteto, Tenant tenant) {
         this.id = id;
         this.emailUsuario = usuarioLogado;
         this.comando = comando;
         this.datagravacao = datagravacao;
         this.arquiteto = arquiteto;
+        this.tenant = tenant;
+        this.status = true;
+    }
+
+
+    public LogSistema(Integer id, String usuarioLogado, String comando, OffsetDateTime datagravacao,
+                      Vendedor vendedor) {
+        this.id = id;
+        this.emailUsuario = usuarioLogado;
+        this.comando = comando;
+        this.datagravacao = datagravacao;
+        this.vendedor = vendedor;
         this.status = true;
     }
 

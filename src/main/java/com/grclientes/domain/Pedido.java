@@ -1,6 +1,10 @@
 package com.grclientes.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.grclientes.domain.dto.ClienteDTO;
+import com.grclientes.domain.dto.ClienteNewDTO;
+import com.grclientes.domain.dto.PedidoDTO;
+import com.grclientes.domain.dto.PedidoNewDTO;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -75,6 +79,20 @@ public class Pedido implements Serializable {
     }
 
     public Pedido() {
+    }
+
+    public Pedido(PedidoDTO obj){
+        this.id = obj.getId();
+        this.nf = obj.getNf();
+        this.produto = obj.getProduto();
+        this.cliente = obj.getCliente();
+    }
+
+    public Pedido(PedidoNewDTO obj){
+        this.id = obj.getId();
+        this.nf = obj.getNf();
+        this.produto = obj.getProduto();
+        this.cliente = obj.getCliente();
     }
 
     @JsonIgnore

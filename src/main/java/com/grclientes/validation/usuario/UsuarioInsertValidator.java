@@ -1,19 +1,15 @@
 package com.grclientes.validation.usuario;
 
-import com.mei.vendasapi.domain.Usuario;
-import com.mei.vendasapi.domain.dto.UsuarioNewDTO;
-import com.mei.vendasapi.repository.UsuarioRepository;
-import com.mei.vendasapi.resource.exception.FieldMessage;
+import com.grclientes.domain.Usuario;
+import com.grclientes.domain.dto.UsuarioNewDTO;
+import com.grclientes.repository.UsuarioRepository;
+import com.grclientes.resource.exception.FieldMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
 
 public class UsuarioInsertValidator implements ConstraintValidator<UsuarioInsert, UsuarioNewDTO> {
     @Autowired

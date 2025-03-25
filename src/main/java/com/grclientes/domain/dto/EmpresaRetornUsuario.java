@@ -1,6 +1,7 @@
 package com.grclientes.domain.dto;
 
-import com.mei.vendasapi.domain.Empresa;
+
+import com.grclientes.domain.Empresa;
 
 import java.math.BigDecimal;
 

@@ -1,11 +1,10 @@
 package com.grclientes.resource;
 
-
-import com.grclientes.domain.Pedido;
-import com.grclientes.domain.dto.PedidoDTO;
-import com.grclientes.domain.dto.PedidoNewDTO;
+import com.grclientes.domain.Vendedor;
+import com.grclientes.domain.dto.VendedorDTO;
+import com.grclientes.domain.dto.VendedorNewDTO;
 import com.grclientes.security.resource.CheckSecurity;
-import com.grclientes.service.PedidoService;
+import com.grclientes.service.VendedorService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,11 +16,11 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/pedidos")
-public class PedidoResource {
+@RequestMapping(value = "/vendedores")
+public class VendedorResource {
 
     @Autowired
-    private PedidoService pedidoService;
+    private VendedorService pedidoService;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -29,23 +28,23 @@ public class PedidoResource {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> lista() {
 
-        List<Pedido> lista =  pedidoService.lista();
+        List<Vendedor> lista =  pedidoService.lista();
 
         return ResponseEntity.ok(lista);
     }
 
-    @CheckSecurity.Pedido.PodeConsultar
+    @CheckSecurity.Vendedor.PodeConsultar
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
-        Pedido obj = pedidoService.buscarOuFalhar(id);
+        Vendedor obj = pedidoService.buscarOuFalhar(id);
         return ResponseEntity.ok(obj);
     }
 
-    @CheckSecurity.Pedido.PodeCadastrar
+    @CheckSecurity.Vendedor.PodeCadastrar
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Pedido> criarPedido(@RequestBody PedidoNewDTO objNewDTO) {
-        Pedido novoObj = modelMapper.map(objNewDTO, Pedido.class);
-        Pedido objNovo = pedidoService.insert(objNewDTO);
+    public ResponseEntity<Vendedor> criarVendedor(@RequestBody VendedorNewDTO objNewDTO) {
+        Vendedor novoObj = modelMapper.map(objNewDTO, Vendedor.class);
+        Vendedor objNovo = pedidoService.insert(objNewDTO);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().
                 path("/{id}").buildAndExpand(objNovo.getId()).toUri();
@@ -53,24 +52,22 @@ public class PedidoResource {
         return ResponseEntity.created(uri).body(novoObj);
     }
 
-    @CheckSecurity.Pedido.PodeAtualizar
+    @CheckSecurity.Vendedor.PodeAtualizar
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Pedido> update(@Valid @RequestBody PedidoDTO obj, @PathVariable Integer id) {
+    public ResponseEntity<Vendedor> update(@Valid @RequestBody VendedorDTO obj, @PathVariable Integer id) {
         obj.setId(id);
-        Pedido obj1 = pedidoService.atualiza(obj);
+        Vendedor obj1 = pedidoService.atualiza(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().
                 path("/{id}").buildAndExpand(obj1.getId()).toUri();
         return ResponseEntity.created(uri).body(obj1);
 
     }
 
-    @CheckSecurity.Pedido.PodeExcluir
+    @CheckSecurity.Vendedor.PodeExcluir
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         pedidoService.delete(id);
         return ResponseEntity.noContent().build();
     }
-
-
 
 }

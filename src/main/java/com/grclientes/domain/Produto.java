@@ -1,6 +1,10 @@
 package com.grclientes.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.grclientes.domain.dto.ClienteDTO;
+import com.grclientes.domain.dto.ClienteNewDTO;
+import com.grclientes.domain.dto.ProdutoDTO;
+import com.grclientes.domain.dto.ProdutoNewDTO;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -73,6 +77,20 @@ public class Produto implements Serializable {
     }
 
     public Produto() {
+    }
+
+    public Produto(ProdutoDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+        this.status = obj.getStatus();
+        this.sku = obj.getSku();
+    }
+
+    public Produto(ProdutoNewDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+        this.status = obj.getStatus();
+        this.sku = obj.getSku();
     }
 
     @JsonIgnore

@@ -1,8 +1,9 @@
 package com.grclientes.resource;
 
-import com.mei.vendasapi.config.MeiApiProperty;
-import com.mei.vendasapi.repository.UsuarioRepository;
-import com.mei.vendasapi.service.util.Tenantuser;
+
+import com.grclientes.config.MeiApiProperty;
+import com.grclientes.repository.UsuarioRepository;
+import com.grclientes.service.util.Tenantuser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;

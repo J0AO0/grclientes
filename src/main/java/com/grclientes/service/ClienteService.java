@@ -1,10 +1,11 @@
 package com.grclientes.service;
 
-import com.mei.vendasapi.domain.Cliente;
-import com.mei.vendasapi.domain.dto.ClienteDTO;
-import com.mei.vendasapi.domain.dto.ClienteNewDTO;
-import com.mei.vendasapi.repository.ClienteRepository;
-import com.mei.vendasapi.service.exception.EntidadeNaoEncontradaExcepition;
+
+import com.grclientes.domain.Cliente;
+import com.grclientes.domain.dto.ClienteDTO;
+import com.grclientes.domain.dto.ClienteNewDTO;
+import com.grclientes.repository.ClienteRepository;
+import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -35,8 +36,6 @@ public class ClienteService {
     	obj.setId(null);
         Cliente resEst = new Cliente();
         resEst.setNome(obj.getNome());
-        resEst.setTelefone(obj.getTelefone());
-        resEst.setEmail(obj.getEmail());
         return repo.save(resEst);
     }
 
@@ -63,13 +62,6 @@ public class ClienteService {
     public Cliente buscarOuFalhar(int id) {
         return repo.findById(id)
                 .orElseThrow(() -> new EntidadeNaoEncontradaExcepition(String.format("Cliente  não encontrada", id)));
-    }
-
-    @Transactional
-    public void status(Boolean obj, int id) {
-        Cliente cliente = buscarOuFalhar(id);
-        cliente.setStatus(obj);
-
     }
 
 }

@@ -1,7 +1,8 @@
 package com.grclientes.domain.flat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mei.vendasapi.domain.Classepermissao;
+import com.grclientes.domain.Classepermissao;
+
 
 import javax.persistence.ManyToOne;
 

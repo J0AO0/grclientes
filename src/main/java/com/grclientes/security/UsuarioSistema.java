@@ -2,7 +2,8 @@ package com.grclientes.security;
 
 
 
-import com.mei.vendasapi.domain.Usuario;
+
+import com.grclientes.domain.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 

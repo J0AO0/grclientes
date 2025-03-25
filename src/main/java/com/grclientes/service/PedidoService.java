@@ -1,15 +1,15 @@
 package com.grclientes.service;
 
-import com.mei.vendasapi.domain.Cliente;
-import com.mei.vendasapi.domain.Pedido;
-import com.mei.vendasapi.domain.TipoFrete;
-import com.mei.vendasapi.domain.TipoPedido;
-import com.mei.vendasapi.domain.dto.PedidoDTO;
-import com.mei.vendasapi.domain.dto.PedidoNewDTO;
-import com.mei.vendasapi.repository.ClienteRepository;
-import com.mei.vendasapi.repository.PedidoRepository;
-import com.mei.vendasapi.service.exception.EntidadeEmUsoException;
-import com.mei.vendasapi.service.exception.EntidadeNaoEncontradaExcepition;
+
+import com.grclientes.domain.Cliente;
+import com.grclientes.domain.Pedido;
+import com.grclientes.domain.Produto;
+import com.grclientes.domain.dto.PedidoDTO;
+import com.grclientes.domain.dto.PedidoNewDTO;
+import com.grclientes.repository.ClienteRepository;
+import com.grclientes.repository.PedidoRepository;
+import com.grclientes.service.exception.EntidadeEmUsoException;
+import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -43,10 +43,8 @@ public class PedidoService {
         Pedido resEst = new Pedido();
         Cliente c = obj.getCliente();
         resEst.setCliente(c);
-        TipoFrete f  = obj.getTipoFrete();
-        resEst.setTipoFrete(f);
-        TipoPedido p = obj.getTipoPedido();
-        resEst.setTipoPedido(p);
+        Produto p  = obj.getProduto();
+        resEst.setProduto(p);
         
         return repo.save(resEst);
     }

@@ -1,6 +1,6 @@
 package com.grclientes.repository;
 
-import com.mei.vendasapi.domain.Permissao;
+import com.grclientes.domain.Permissao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

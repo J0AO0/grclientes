@@ -1,8 +1,9 @@
 package com.grclientes.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mei.vendasapi.domain.Permissao;
-import com.mei.vendasapi.validation.usuario.UsuarioInsert;
+import com.grclientes.domain.Permissao;
+import com.grclientes.validation.usuario.UsuarioInsert;
+
 
 import javax.persistence.*;
 import java.io.Serializable;

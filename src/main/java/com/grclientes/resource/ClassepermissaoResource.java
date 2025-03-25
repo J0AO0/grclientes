@@ -1,8 +1,9 @@
 package com.grclientes.resource;
 
-import com.mei.vendasapi.domain.Classepermissao;
-import com.mei.vendasapi.domain.dto.flat.ClassePermissaoFlat;
-import com.mei.vendasapi.service.ClassepermissaoService;
+
+import com.grclientes.domain.Classepermissao;
+import com.grclientes.domain.flat.ClassePermissaoFlat;
+import com.grclientes.service.ClassepermissaoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
 package com.grclientes.domain.flat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mei.vendasapi.domain.Permissao;
+import com.grclientes.domain.Permissao;
 
 import javax.persistence.Id;
 import java.io.Serializable;

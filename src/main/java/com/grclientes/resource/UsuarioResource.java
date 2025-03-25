@@ -1,14 +1,14 @@
 package com.grclientes.resource;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.mei.vendasapi.domain.Usuario;
-import com.mei.vendasapi.domain.dto.UsuarioDTO;
-import com.mei.vendasapi.domain.dto.flat.UsuarioFlat;
-import com.mei.vendasapi.domain.dto.viewretorno.UsuarioView;
-import com.mei.vendasapi.repository.UsuarioRepository;
-import com.mei.vendasapi.repository.filter.UsuarioFilter;
-import com.mei.vendasapi.security.resource.CheckSecurity;
-import com.mei.vendasapi.service.UsuarioService;
+import com.grclientes.domain.Usuario;
+import com.grclientes.domain.dto.UsuarioDTO;
+import com.grclientes.domain.flat.UsuarioFlat;
+import com.grclientes.domain.viewretorno.UsuarioView;
+import com.grclientes.repository.UsuarioRepository;
+import com.grclientes.repository.filter.UsuarioFilter;
+import com.grclientes.security.resource.CheckSecurity;
+import com.grclientes.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

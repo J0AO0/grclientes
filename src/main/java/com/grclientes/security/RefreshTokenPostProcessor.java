@@ -1,6 +1,7 @@
 package com.grclientes.security;
 
-import com.mei.vendasapi.config.MeiApiProperty;
+
+import com.grclientes.config.MeiApiProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;

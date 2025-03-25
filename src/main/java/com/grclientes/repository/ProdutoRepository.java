@@ -18,7 +18,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer>, Prod
     @Query(value = "SELECT * FROM produto where id = ?", nativeQuery = true)
     Produto findPorId(Integer id);
 
-    Produto findByName(String name);
+    Produto findByNome(String name);
     
     @Query(value = "select * from produto where status=1 and tenant_id = ?", nativeQuery = true)
 	List<Produto> findAllSql(Integer buscarOuFalharInt);

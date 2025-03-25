@@ -2,10 +2,11 @@ package com.grclientes.service;
 
 
 
-import com.mei.vendasapi.domain.Codigo;
-import com.mei.vendasapi.domain.dto.CnpjDTOAPI;
-import com.mei.vendasapi.repository.CodigoRepository;
-import com.mei.vendasapi.service.exception.EntidadeNaoEncontradaExcepition;
+
+import com.grclientes.domain.Codigo;
+import com.grclientes.domain.dto.CnpjDTOAPI;
+import com.grclientes.repository.CodigoRepository;
+import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;

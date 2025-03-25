@@ -1,16 +1,16 @@
 package com.grclientes.service;
 
-import com.mei.vendasapi.domain.Categoria;
-import com.mei.vendasapi.domain.LogSistema;
-import com.mei.vendasapi.domain.Produto;
-import com.mei.vendasapi.domain.dto.ProdutoDTO;
-import com.mei.vendasapi.domain.dto.ProdutoNewDTO;
-import com.mei.vendasapi.domain.dto.flat.ProdutoFlat;
-import com.mei.vendasapi.repository.LogSistemaRepository;
-import com.mei.vendasapi.repository.ProdutoRepository;
-import com.mei.vendasapi.service.exception.EntidadeEmUsoException;
-import com.mei.vendasapi.service.exception.EntidadeNaoEncontradaExcepition;
-import com.mei.vendasapi.service.util.Tenantuser;
+
+import com.grclientes.domain.LogSistema;
+import com.grclientes.domain.Produto;
+import com.grclientes.domain.dto.ProdutoDTO;
+import com.grclientes.domain.dto.ProdutoNewDTO;
+import com.grclientes.domain.flat.ProdutoFlat;
+import com.grclientes.repository.LogSistemaRepository;
+import com.grclientes.repository.ProdutoRepository;
+import com.grclientes.service.exception.EntidadeEmUsoException;
+import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
+import com.grclientes.service.util.Tenantuser;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -23,8 +23,6 @@ import java.util.List;
 
 @Service
 public class ProdutoService {
-	
-	private static String caminhoImagem = "C:\\git\\labsrep-ui\\src\\assets\\fotos_produto";
 	
     @Autowired
     private ProdutoRepository repo;
@@ -51,12 +49,7 @@ public class ProdutoService {
     public Produto insert(ProdutoNewDTO obj){
     	obj.setId(null);
         Produto resEst = new Produto();
-        resEst.setName(obj.getName());
-        resEst.setPreco(obj.getPreco());
-        resEst.setDescricao(obj.getDescricao());
-        resEst.setTenant(tenantUsuario.buscarOuFalhar());
-        Categoria c = obj.getCategoria();
-        resEst.setCategoria(c);
+        resEst.setNome(obj.getNome());
         resEst.setSku(obj.getSku());
         resEst.setStatus(obj.getStatus());
         repo.save(resEst);
@@ -131,17 +124,14 @@ public class ProdutoService {
         // Busca o produto no repositório
         Produto produto = repo.findById(id)
                 .orElseThrow(() -> new EntidadeNaoEncontradaExcepition("Produto não encontrado"));
-        // Constrói o caminho completo da imagem
-        String imagemPath = "/assets/fotos_produto/" + produto.getQrCode();
+//        // Constrói o caminho completo da imagem
+//        String imagemPath = "/assets/fotos_produto/" + produto.getQrCode();
         // Cria o ProdutoDTO e preenche os dados do produto
         ProdutoDTO produtoDto = new ProdutoDTO();
         produtoDto.setId(produto.getId());
-        produtoDto.setName(produto.getName());
-        produtoDto.setCategoria(produto.getCategoria());
-        produtoDto.setPreco(produto.getPreco());
-        produtoDto.setDescricao(produto.getDescricao());
-        produtoDto.setQrCode(imagemPath); // Adiciona o caminho da imagem
-
+        produtoDto.setNome(produto.getNome());
+        produtoDto.setSku(produto.getSku());
+        produtoDto.setStatus(produto.getStatus());
         return produtoDto;
     }
     

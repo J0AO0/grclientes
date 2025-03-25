@@ -1,9 +1,10 @@
 package com.grclientes.resource;
 
-import com.mei.vendasapi.domain.Cliente;
-import com.mei.vendasapi.domain.dto.ClienteDTO;
-import com.mei.vendasapi.domain.dto.ClienteNewDTO;
-import com.mei.vendasapi.service.ClienteService;
+
+import com.grclientes.domain.Cliente;
+import com.grclientes.domain.dto.ClienteDTO;
+import com.grclientes.domain.dto.ClienteNewDTO;
+import com.grclientes.service.ClienteService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,12 +62,6 @@ public class ClienteResource {
                 path("/{id}").buildAndExpand(obj1.getId()).toUri();
         return ResponseEntity.created(uri).body(obj1);
 
-    }
-
-    @RequestMapping(value="/{id}/status",method = RequestMethod.PUT)
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void inativar(@RequestBody Boolean obj,@PathVariable int id)	{
-        repo.status(obj,id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

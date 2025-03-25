@@ -1,6 +1,10 @@
 package com.grclientes.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.grclientes.domain.dto.ArquitetoDTO;
+import com.grclientes.domain.dto.ArquitetoNewDTO;
+import com.grclientes.domain.dto.VendedorDTO;
+import com.grclientes.domain.dto.VendedorNewDTO;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -63,6 +67,18 @@ public class Vendedor implements Serializable {
     }
 
     public Vendedor() {
+    }
+
+    public Vendedor(VendedorDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+        this.arquiteto = obj.getArquiteto();
+    }
+
+    public Vendedor(VendedorNewDTO obj){
+        this.id = obj.getId();
+        this.nome = obj.getNome();
+        this.arquiteto = obj.getArquiteto();
     }
 
     @JsonIgnore

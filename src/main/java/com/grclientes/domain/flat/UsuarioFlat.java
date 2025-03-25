@@ -1,7 +1,9 @@
 package com.grclientes.domain.flat;
 
-import com.mei.vendasapi.domain.Usuario;
-import com.mei.vendasapi.domain.dto.EmpresaUsu;
+
+
+import com.grclientes.domain.Usuario;
+import com.grclientes.domain.dto.EmpresaUsu;
 
 import java.time.OffsetDateTime;
 import java.util.List;

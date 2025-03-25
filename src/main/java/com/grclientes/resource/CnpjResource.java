@@ -1,9 +1,10 @@
 package com.grclientes.resource;
 
-import com.mei.vendasapi.domain.dto.CnpjDTOAPI;
-import com.mei.vendasapi.domain.dto.CnpjFront;
-import com.mei.vendasapi.resource.util.BR;
-import com.mei.vendasapi.service.SevicosResquestAllAIP;
+
+import com.grclientes.domain.dto.CnpjDTOAPI;
+import com.grclientes.domain.dto.CnpjFront;
+import com.grclientes.resource.util.BR;
+import com.grclientes.service.SevicosResquestAllAIP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,13 +1,17 @@
 package com.grclientes.domain.flat;
 
-import com.mei.vendasapi.domain.Classepermissao;
-import com.mei.vendasapi.domain.Permissao;
+
+
+import com.grclientes.domain.Classepermissao;
+import com.grclientes.domain.Permissao;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
+
+//TODO ARRUMAR ESSA MERDA TBM !!
 
 public class ClassePermissaoFlat {
     private static final long serialVersionUID = 1L;

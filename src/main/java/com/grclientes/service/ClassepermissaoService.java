@@ -1,13 +1,14 @@
 package com.grclientes.service;
 
-import com.mei.vendasapi.domain.Classepermissao;
-import com.mei.vendasapi.domain.Usuario;
-import com.mei.vendasapi.domain.dto.flat.ClassePermissaoFlat;
-import com.mei.vendasapi.repository.ClassepermissaoRepository;
-import com.mei.vendasapi.repository.UsuarioRepository;
-import com.mei.vendasapi.service.exception.DataIntegrityException;
-import com.mei.vendasapi.service.exception.EntidadeNaoEncontradaExcepition;
-import com.mei.vendasapi.service.exception.ObjectNotFoundException;
+
+import com.grclientes.domain.Classepermissao;
+import com.grclientes.domain.Usuario;
+import com.grclientes.domain.flat.ClassePermissaoFlat;
+import com.grclientes.repository.ClassepermissaoRepository;
+import com.grclientes.repository.UsuarioRepository;
+import com.grclientes.service.exception.DataIntegrityException;
+import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
+import com.grclientes.service.exception.ObjectNotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;

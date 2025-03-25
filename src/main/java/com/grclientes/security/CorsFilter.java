@@ -1,6 +1,8 @@
 package com.grclientes.security;
 
-import com.mei.vendasapi.config.MeiApiProperty;
+
+
+import com.grclientes.config.MeiApiProperty;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

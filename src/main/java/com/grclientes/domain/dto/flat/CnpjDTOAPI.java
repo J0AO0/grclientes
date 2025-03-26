@@ -1,4 +1,4 @@
-package com.grclientes.domain.flat;
+package com.grclientes.domain.dto.flat;
 
 public class CnpjDTOAPI {
 	

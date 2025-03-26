@@ -132,7 +132,7 @@ public class UsuarioDTO implements Serializable{
     }
 
     public UsuarioDTO(Integer id, Boolean status, String nome, String login, String email, List<Permissao> permissoes,
-                       String senha) {
+                      String senha) {
         this.id = id;
         this.status = status;
         this.nome = nome;

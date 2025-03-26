@@ -3,7 +3,7 @@ package com.grclientes.service;
 
 import com.grclientes.domain.Classepermissao;
 import com.grclientes.domain.Usuario;
-import com.grclientes.domain.flat.ClassePermissaoFlat;
+import com.grclientes.domain.dto.flat.ClassePermissaoFlat;
 import com.grclientes.repository.ClassepermissaoRepository;
 import com.grclientes.repository.UsuarioRepository;
 import com.grclientes.service.exception.DataIntegrityException;

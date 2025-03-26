@@ -3,7 +3,7 @@ package com.grclientes.resource;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.grclientes.domain.Usuario;
 import com.grclientes.domain.dto.UsuarioDTO;
-import com.grclientes.domain.flat.UsuarioFlat;
+import com.grclientes.domain.dto.flat.UsuarioFlat;
 import com.grclientes.domain.viewretorno.UsuarioView;
 import com.grclientes.repository.UsuarioRepository;
 import com.grclientes.repository.filter.UsuarioFilter;
@@ -44,7 +44,7 @@ public class UsuarioResource {
         Usuario obj = service.find(id);
         return ResponseEntity.ok().body(obj);
     }
-//    @CheckSecurity.Usuario.PodeConsultar
+    //    @CheckSecurity.Usuario.PodeConsultar
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public ResponseEntity<List<UsuarioFlat>> findAll() {
         List<UsuarioFlat> list = service.findAllSQL();

@@ -4,7 +4,7 @@ import com.grclientes.domain.Arquiteto;
 import com.grclientes.domain.LogSistema;
 import com.grclientes.domain.dto.ArquitetoDTO;
 import com.grclientes.domain.dto.ArquitetoNewDTO;
-import com.grclientes.domain.flat.ArquitetoFlat;
+import com.grclientes.domain.dto.flat.ArquitetoFlat;
 import com.grclientes.repository.ArquitetoRepository;
 import com.grclientes.repository.LogSistemaRepository;
 import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;

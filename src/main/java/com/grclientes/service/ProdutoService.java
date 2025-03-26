@@ -5,7 +5,7 @@ import com.grclientes.domain.LogSistema;
 import com.grclientes.domain.Produto;
 import com.grclientes.domain.dto.ProdutoDTO;
 import com.grclientes.domain.dto.ProdutoNewDTO;
-import com.grclientes.domain.flat.ProdutoFlat;
+import com.grclientes.domain.dto.flat.ProdutoFlat;
 import com.grclientes.repository.LogSistemaRepository;
 import com.grclientes.repository.ProdutoRepository;
 import com.grclientes.service.exception.EntidadeEmUsoException;

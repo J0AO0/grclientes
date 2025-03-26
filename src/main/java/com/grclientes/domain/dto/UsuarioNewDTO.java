@@ -90,7 +90,7 @@ public class UsuarioNewDTO implements Serializable{
     }
 
     public UsuarioNewDTO(Integer id, Integer status, String nome, String login, String email, List<Permissao> permissoes,
-                          String senha) {
+                         String senha) {
         this.id = id;
         this.status = status;
         this.nome = nome;

@@ -1,13 +1,17 @@
 package com.grclientes.domain.dto;
 
+import com.grclientes.domain.Arquiteto;
 import com.grclientes.domain.Cliente;
 import com.grclientes.domain.Produto;
+import com.grclientes.domain.Vendedor;
 
 public class PedidoNewDTO {
     private Integer id;
     private Integer nf;
     private Produto produto;
     private Cliente cliente;
+    private Arquiteto arquiteto;
+    private Vendedor vendedor;
 
     public Integer getId() {
         return id;
@@ -41,10 +45,28 @@ public class PedidoNewDTO {
         this.cliente = cliente;
     }
 
-    public PedidoNewDTO(Integer id, Integer nf, Produto produto, Cliente cliente) {
+    public Arquiteto getArquiteto() {
+        return arquiteto;
+    }
+
+    public void setArquiteto(Arquiteto arquiteto) {
+        this.arquiteto = arquiteto;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public PedidoNewDTO(Integer id, Integer nf, Produto produto, Cliente cliente, Arquiteto arquiteto, Vendedor vendedor) {
         this.id = id;
         this.nf = nf;
         this.produto = produto;
         this.cliente = cliente;
+        this.arquiteto = arquiteto;
+        this.vendedor = vendedor;
     }
 }

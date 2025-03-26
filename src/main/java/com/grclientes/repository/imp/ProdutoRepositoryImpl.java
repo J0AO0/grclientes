@@ -97,10 +97,10 @@ public class ProdutoRepositoryImpl implements ProdutoRepositoryQuery {
             predicates.add(builder.lessThanOrEqualTo(logJoin.get("datagravacao"), offsetDateTime));
         }
 
-        if (produtoFilter.getStatus().equals("Ativos")) {
-            predicates.add(builder.equal(root.get("status"), true)); // Retorna empresas ativas (status = true)
+        if ("Inativos".equals(produtoFilter.getStatus())) {
+            predicates.add(builder.equal(root.get("status"), false)); // Inativos
         } else {
-            predicates.add(builder.equal(root.get("status"), false)); // Retorna empresas inativas (status = false)
+            predicates.add(builder.equal(root.get("status"), true)); // Padrão Ativos
         }
 
         return predicates.toArray(new Predicate[predicates.size()]);

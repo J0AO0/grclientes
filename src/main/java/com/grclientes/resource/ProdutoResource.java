@@ -4,29 +4,22 @@ package com.grclientes.resource;
 import com.grclientes.domain.Produto;
 import com.grclientes.domain.dto.ProdutoDTO;
 import com.grclientes.domain.dto.ProdutoNewDTO;
-import com.grclientes.domain.flat.ProdutoFlat;
+import com.grclientes.domain.dto.flat.ProdutoFlat;
 import com.grclientes.repository.ProdutoRepository;
 import com.grclientes.repository.filter.ProdutoFilter;
 import com.grclientes.security.resource.CheckSecurity;
 import com.grclientes.service.ProdutoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/produtos")

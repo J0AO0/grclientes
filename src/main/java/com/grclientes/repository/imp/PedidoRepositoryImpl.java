@@ -88,6 +88,16 @@ public class PedidoRepositoryImpl implements PedidoRepositoryQuery {
                     builder.like(builder.lower(root.get("nf")), "%" + pedidoFilter.getNf() + "%"));
         }
 
+        if (pedidoFilter.getArquiteto() != null) {
+            predicates.add(
+                    builder.like(builder.lower(root.get("arquiteto")), "%" + pedidoFilter.getNf() + "%"));
+        }
+
+        if (pedidoFilter.getVendedor() != null) {
+            predicates.add(
+                    builder.like(builder.lower(root.get("vendedor")), "%" + pedidoFilter.getNf() + "%"));
+        }
+
         if (pedidoFilter.getDatagravacaode() != null) {
             Instant instant = pedidoFilter.getDatagravacaode().toInstant();
             ZoneOffset zoneOffset = ZoneId.systemDefault().getRules().getOffset(Instant.now());

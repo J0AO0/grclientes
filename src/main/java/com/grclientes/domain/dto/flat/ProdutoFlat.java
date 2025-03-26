@@ -1,4 +1,4 @@
-package com.grclientes.domain.flat;
+package com.grclientes.domain.dto.flat;
 
 import com.grclientes.domain.Produto;
 

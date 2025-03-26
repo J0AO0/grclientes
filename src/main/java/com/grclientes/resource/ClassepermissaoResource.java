@@ -2,7 +2,7 @@ package com.grclientes.resource;
 
 
 import com.grclientes.domain.Classepermissao;
-import com.grclientes.domain.flat.ClassePermissaoFlat;
+import com.grclientes.domain.dto.flat.ClassePermissaoFlat;
 import com.grclientes.service.ClassepermissaoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

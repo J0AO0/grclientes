@@ -19,11 +19,11 @@ public interface UsuarioEmpresaRepository extends JpaRepository<UsuarioEmpresa, 
 	Integer verificaEmpPadrao(Integer id, Integer id2);
 	@Query(value= "select id_usuario from usuario_empresa where id_empresa = ? and id_usuario = ?", nativeQuery = true)
 	Integer verificaEmpUsuario(Integer id, Integer id2);
-    @Modifying
-    @Transactional
+	@Modifying
+	@Transactional
 	@Query(value= "delete from usuario_empresa where id_usuario = ?", nativeQuery = true)
 	void deleteEmpPorUsuario(Integer id);
-	
+
 
 
 }

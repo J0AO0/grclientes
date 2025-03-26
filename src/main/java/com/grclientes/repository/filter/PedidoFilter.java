@@ -1,7 +1,9 @@
 package com.grclientes.repository.filter;
 
+import com.grclientes.domain.Arquiteto;
 import com.grclientes.domain.Cliente;
 import com.grclientes.domain.Produto;
+import com.grclientes.domain.Vendedor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -12,6 +14,8 @@ public class PedidoFilter {
     private Cliente cliente;
     private Integer nf;
     private Produto produto;
+    private Arquiteto arquiteto;
+    private Vendedor vendedor;
     private String emailusuario;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date datagravacaode;
@@ -74,7 +78,23 @@ public class PedidoFilter {
         this.produto = produto;
     }
 
-    public PedidoFilter(Integer id, Cliente cliente, Integer nf, Produto produto, String emailusuario, Date datagravacaode, Date datagravacaoate) {
+    public Arquiteto getArquiteto() {
+        return arquiteto;
+    }
+
+    public void setArquiteto(Arquiteto arquiteto) {
+        this.arquiteto = arquiteto;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public PedidoFilter(Integer id, Cliente cliente, Integer nf, Produto produto, Arquiteto arquiteto, Vendedor vendedor, String emailusuario, Date datagravacaode, Date datagravacaoate) {
         this.id = id;
         this.cliente = cliente;
         this.nf = nf;
@@ -82,6 +102,8 @@ public class PedidoFilter {
         this.emailusuario = emailusuario;
         this.datagravacaode = datagravacaode;
         this.datagravacaoate = datagravacaoate;
+        this.vendedor = vendedor;
+        this.arquiteto = arquiteto;
     }
 
     public PedidoFilter() {

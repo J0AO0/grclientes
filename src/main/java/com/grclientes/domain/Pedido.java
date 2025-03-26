@@ -28,6 +28,11 @@ public class Pedido implements Serializable {
     private Cliente cliente;
 
     @ManyToOne
+    private Arquiteto arquiteto;
+
+    @ManyToOne Vendedor vendedor;
+
+    @ManyToOne
     private Tenant tenant;
 
     public Integer getId() {
@@ -70,11 +75,29 @@ public class Pedido implements Serializable {
         this.tenant = tenant;
     }
 
-    public Pedido(Integer id, Integer nf, Produto produto, Cliente cliente, Tenant tenant) {
+    public Arquiteto getArquiteto() {
+        return arquiteto;
+    }
+
+    public void setArquiteto(Arquiteto arquiteto) {
+        this.arquiteto = arquiteto;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public Pedido(Integer id, Integer nf, Produto produto, Cliente cliente, Arquiteto arquiteto, Vendedor vendedor, Tenant tenant) {
         this.id = id;
         this.nf = nf;
         this.produto = produto;
         this.cliente = cliente;
+        this.arquiteto = arquiteto;
+        this.vendedor = vendedor;
         this.tenant = tenant;
     }
 

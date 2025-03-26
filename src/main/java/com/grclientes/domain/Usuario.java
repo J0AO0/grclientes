@@ -2,8 +2,8 @@ package com.grclientes.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
-import com.grclientes.domain.flat.PermissaoFront;
-import com.grclientes.domain.flat.UsuarioFlat;
+import com.grclientes.domain.dto.flat.PermissaoFront;
+import com.grclientes.domain.dto.flat.UsuarioFlat;
 import com.grclientes.domain.viewretorno.UsuarioView;
 
 import javax.persistence.*;
@@ -167,14 +167,13 @@ public class Usuario implements Serializable {
     private void transformarPermisaoFlat(List<PermissaoFront> permissoes2) {
         for (PermissaoFront pf : permissoes2) {
             switch (pf.getNome()) {
-                case "Categoria":classePermissaoFlatCategoria(pf);break;
+                case "Cliente":classePermissaoFlatCliente(pf);break;
                 case "Pedido":classePermissaoFlatPedido(pf);break;
                 case "Produto":classePermissaoFlatProduto(pf);break;
                 case "Usuario":classePermissaoFlatUsuario(pf); break;
                 case "Empresa":classePermissaoFlatEmpresa(pf); break;
-                case "CondPagamento":classePermissaoFlatCondPagamento(pf); break;
-                case "TipoFrete":classePermissaoFlatTipoFrete(pf);break;
-                case "FormaPagamento":classePermissaoFlatFormaPagamento(pf);break;
+                case "Arquiteto":classePermissaoFlatArquiteto(pf);break;
+                case "Vendedor":classePermissaoFlatVendedor(pf);break;
                // case "Relatório":classePermissaoFlatRelatorio(pf);break;
             }
 
@@ -182,14 +181,13 @@ public class Usuario implements Serializable {
 
     }
 
-    //TODO ARRUMAR ESSA MERDA AQUI PQP !!!
 
-    private void classePermissaoFlatCategoria(PermissaoFront pf) {
-        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(37,"C_CAT");this.permissoes.add(c);};
-        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(38,"U_CAT");this.permissoes.add(u);};
-        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(39,"D_CAT");this.permissoes.add(d);};
-        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(40,"R_CAT");this.permissoes.add(r);};
-        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(41,"S_CAT");this.permissoes.add(s);};
+    private void classePermissaoFlatCliente(PermissaoFront pf) {
+        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(37,"C_CLI");this.permissoes.add(c);};
+        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(38,"U_CLI");this.permissoes.add(u);};
+        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(39,"D_CLI");this.permissoes.add(d);};
+        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(40,"R_CLI");this.permissoes.add(r);};
+        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(41,"S_CLI");this.permissoes.add(s);};
 
     }
 
@@ -229,31 +227,22 @@ public class Usuario implements Serializable {
         if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(25,"S_USU");this.permissoes.add(s);};
     }
 
-    private void classePermissaoFlatCondPagamento(PermissaoFront pf) {
+    private void classePermissaoFlatArquiteto(PermissaoFront pf) {
 
-        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(42,"C_COND");this.permissoes.add(c);};
-        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(43,"U_COND");this.permissoes.add(u);};
-        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(44,"D_COND");this.permissoes.add(d);};
-        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(45,"R_COND");this.permissoes.add(r);};
-        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(46,"S_COND");this.permissoes.add(s);};
+        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(47,"C_ARQ");this.permissoes.add(c);};
+        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(48,"U_ARQ");this.permissoes.add(u);};
+        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(49,"D_ARQ");this.permissoes.add(d);};
+        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(50,"R_ARQ");this.permissoes.add(r);};
+        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(51,"S_ARQ");this.permissoes.add(s);};
     }
 
-    private void classePermissaoFlatTipoFrete(PermissaoFront pf) {
+    private void classePermissaoFlatVendedor(PermissaoFront pf) {
 
-        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(47,"C_TIPF");this.permissoes.add(c);};
-        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(48,"U_TIPF");this.permissoes.add(u);};
-        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(49,"D_TIPF");this.permissoes.add(d);};
-        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(50,"R_TIPF");this.permissoes.add(r);};
-        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(51,"S_TIPF");this.permissoes.add(s);};
-    }
-
-    private void classePermissaoFlatFormaPagamento(PermissaoFront pf) {
-
-        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(52,"C_FORMP");this.permissoes.add(c);};
-        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(53,"U_FORMP");this.permissoes.add(u);};
-        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(54,"D_FORMP");this.permissoes.add(d);};
-        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(55,"R_FORMP");this.permissoes.add(r);};
-        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(56,"S_FORMP");this.permissoes.add(s);};
+        if (pf.getPermission().getCreate()) {	Permissao c  = new Permissao(52,"C_VEND");this.permissoes.add(c);};
+        if (pf.getPermission().getUpdate()) {	Permissao u  = new Permissao(53,"U_VEND");this.permissoes.add(u);};
+        if (pf.getPermission().getDelete()) {	Permissao d  = new Permissao(54,"D_VEND");this.permissoes.add(d);};
+        if (pf.getPermission().getRead())   {	Permissao r  = new Permissao(55,"R_VEND");this.permissoes.add(r);};
+        if (pf.getPermission().getStatus()) {	Permissao s  = new Permissao(56,"S_VEND");this.permissoes.add(s);};
     }
 //    private void classePermissaoFlatRelatorio(PermissaoFront pf) {
 //

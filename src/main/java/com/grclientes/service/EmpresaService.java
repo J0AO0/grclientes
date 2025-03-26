@@ -4,7 +4,7 @@ import com.grclientes.domain.Empresa;
 import com.grclientes.domain.LogSistema;
 import com.grclientes.domain.dto.EmpresaDTO;
 import com.grclientes.domain.dto.EmpresaNewDTO;
-import com.grclientes.domain.flat.EmpresaFlat;
+import com.grclientes.domain.dto.flat.EmpresaFlat;
 import com.grclientes.repository.EmpresaRepository;
 import com.grclientes.repository.LogSistemaRepository;
 import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;
@@ -12,8 +12,6 @@ import com.grclientes.service.util.Tenantuser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
 import org.springframework.data.domain.Pageable;

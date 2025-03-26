@@ -4,7 +4,7 @@ import com.grclientes.domain.Vendedor;
 import com.grclientes.domain.LogSistema;
 import com.grclientes.domain.dto.VendedorDTO;
 import com.grclientes.domain.dto.VendedorNewDTO;
-import com.grclientes.domain.flat.VendedorFlat;
+import com.grclientes.domain.dto.flat.VendedorFlat;
 import com.grclientes.repository.VendedorRepository;
 import com.grclientes.repository.LogSistemaRepository;
 import com.grclientes.service.exception.EntidadeNaoEncontradaExcepition;

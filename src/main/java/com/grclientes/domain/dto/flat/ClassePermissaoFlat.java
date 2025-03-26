@@ -1,4 +1,4 @@
-package com.grclientes.domain.flat;
+package com.grclientes.domain.dto.flat;
 
 
 
@@ -83,26 +83,26 @@ public class ClassePermissaoFlat {
         this.nome = objPorCategoria.getNome();
 
         switch(objPorCategoria.getNome()) {
-            case "Usuario": classePermissaoFlatItem(objPorCategoria, permissoes); break;
-            case "Empresa": classePermissaoFlatProduto(objPorCategoria, permissoes); break;
-//            case "Convênio": classePermissaoFlatPedido(objPorCategoria, permissoes); break;
-//            case "Paciente": classePermissaoFlatCliente(objPorCategoria, permissoes); break;
-//            case "Usuario": classePermissaoFlatUsuario(objPorCategoria, permissoes); break;
-//            case "Relatório": classePermissaoFlatRelatorio(objPorCategoria, permissoes); break;
-//            case "EmpresaFlat": classePermissaoFlatEmpresa(objPorCategoria, permissoes); break;
-//            case "Cateogoria": classePermissaoFlatCategoria(objPorCategoria, permissoes); break;
-
+            case "Usuario": classePermissaoFlatUsuario(objPorCategoria, permissoes); break;
+            case "Empresa": classePermissaoFlatEmpresa(objPorCategoria, permissoes); break;
+            case "Produto": classePermissaoFlatProduto(objPorCategoria, permissoes); break;
+            case "Cliente": classePermissaoFlatCliente(objPorCategoria, permissoes); break;
+            case "Pedido": classePermissaoFlatPedido(objPorCategoria, permissoes); break;
+            case "Relatório": classePermissaoFlatRelatorio(objPorCategoria, permissoes); break;
+            case "EmpresaFlat": classePermissaoFlatEmpresa(objPorCategoria, permissoes); break;
+            case "Vendedor": classePermissaoFlatVendedor(objPorCategoria, permissoes); break;
+     //       case "Arquiteto": classePermissaoFlatArquiteto(objPorCategoria, permissoes); break;
         }
 
     }
-    private void classePermissaoFlatCategoria(Classepermissao objPorCategoria, List<Permissao> permissoes) {
+    private void classePermissaoFlatVendedor(Classepermissao objPorCategoria, List<Permissao> permissoes) {
         for (Permissao permissao : permissoes) {
             switch(permissao.getDescricao()) {
-                case "C_CAT": create =Boolean.TRUE ; break;
-                case "U_CAT": update =Boolean.TRUE ; break;
-                case "D_CAT": delete =Boolean.TRUE ; break;
-                case "R_CAT": read =Boolean.TRUE ; break;
-                case "S_CAT": status =Boolean.TRUE ; break;
+                case "C_VEND": create =Boolean.TRUE ; break;
+                case "U_VEND": update =Boolean.TRUE ; break;
+                case "D_VEND": delete =Boolean.TRUE ; break;
+                case "R_VEND": read =Boolean.TRUE ; break;
+                case "S_VEND": status =Boolean.TRUE ; break;
             }
         }
         PermissoesFlat classepermissaoFlat = new PermissoesFlat(create, update, delete, read, status);
@@ -140,27 +140,29 @@ public class ClassePermissaoFlat {
         voltarStatusAtributos();
 
     }
-    private void voltarStatusAtributos() {
-        create =Boolean.FALSE;
-        update =Boolean.FALSE;
-        delete =Boolean.FALSE;
-        read =Boolean.FALSE;
-        status =Boolean.FALSE;
-    }
-    private void classePermissaoFlatItem(Classepermissao objPorCategoria, List<Permissao> permissoes) {
+
+    private void classePermissaoFlatArquiteto(Classepermissao objPorCategoria, List<Permissao> permissoes) {
         for (Permissao permissao : permissoes) {
             switch(permissao.getDescricao()) {
-                case "C_ITEM": create =Boolean.TRUE ; break;
-                case "U_ITEM": update =Boolean.TRUE ; break;
-                case "D_ITEM": delete =Boolean.TRUE ; break;
-                case "R_ITEM": read =Boolean.TRUE ; break;
-                case "S_ITEM": status =Boolean.TRUE ; break;
+                case "C_ARQ": create =Boolean.TRUE ; break;
+                case "U_ARQ": update =Boolean.TRUE ; break;
+                case "D_ARQ": delete =Boolean.TRUE ; break;
+                case "R_ARQ": read =Boolean.TRUE ; break;
+                case "S_ARQ": status =Boolean.TRUE ; break;
             }
         }
         PermissoesFlat classepermissaoFlat = new PermissoesFlat(create, update, delete, read, status);
         setPermission(classepermissaoFlat);
         voltarStatusAtributos();
 
+    }
+
+    private void voltarStatusAtributos() {
+        create =Boolean.FALSE;
+        update =Boolean.FALSE;
+        delete =Boolean.FALSE;
+        read =Boolean.FALSE;
+        status =Boolean.FALSE;
     }
     private void classePermissaoFlatPedido(Classepermissao objPorCategoria, List<Permissao> permissoes) {
         for (Permissao permissao : permissoes) {
